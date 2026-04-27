@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trend-to-Commerce</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="auth-shell" id="auth-shell">
+      <section class="auth-stage" id="auth-stage-home">
+        <div class="auth-card auth-home-card auth-hero-card">
+          <header class="auth-hero-top">
+            <div class="auth-brand-lockup">
+              <div class="brand-mark">T</div>
+              <div>
+                <div class="brand-title">Trend-to-Commerce</div>
+                <div class="brand-sub" data-i18n="auth.brandSub">行业热度 · 选品洞察</div>
+              </div>
+            </div>
+            <nav class="auth-hero-nav">
+              <span data-i18n="auth.navOverview">总览</span>
+              <span data-i18n="auth.navTrend">热词趋势</span>
+              <span data-i18n="auth.navCategory">类目信号</span>
+              <span data-i18n="auth.navMerch">选品建议</span>
+            </nav>
+            <div class="auth-hero-actions">
+              <div class="lang-switch auth-lang-switch">
+                <button
+                  type="button"
+                  class="lang-trigger"
+                  aria-label="切换语言"
+                  data-i18n-aria-label="lang.triggerAria"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span class="lang-trigger-text">中 / EN</span>
+                </button>
+                <div class="lang-menu" hidden>
+                  <button type="button" class="lang-option" data-lang="en">English</button>
+                  <button type="button" class="lang-option" data-lang="zh">中文</button>
+                </div>
+              </div>
+              <button type="button" class="auth-top-btn auth-top-btn--ghost" data-auth-target="register" data-i18n="auth.topSign">
+                注册
+              </button>
+              <button type="button" class="auth-top-btn" data-auth-target="login" data-i18n="auth.topLog">
+                登录
+              </button>
+            </div>
+          </header>
+
+          <div class="auth-hero-body">
+            <div class="auth-hero-main">
+              <div class="auth-proof-pill">
+                <span class="auth-proof-dot" aria-hidden="true"></span>
+                <span data-i18n="auth.proof">商户桌面选品入口</span>
+              </div>
+              <h1 class="auth-title auth-hero-title" id="auth-hero-title" data-i18n="auth.heroTitle">让商户一眼知道该上什么货</h1>
+              <p class="auth-copy auth-hero-copy" data-i18n="auth.heroCopy">
+                基于热词趋势、类目信号与选品建议，快速进入一个清晰、可信、可直接执行的商户工作台。
+              </p>
+              <div class="auth-hero-cta">
+                <button
+                  type="button"
+                  class="auth-action-btn auth-action-btn--primary auth-hero-btn"
+                  data-auth-target="login"
+                  data-i18n="auth.ctaLogin"
+                >
+                  Log in
+                </button>
+                <button
+                  type="button"
+                  class="auth-action-btn auth-action-btn--secondary auth-hero-btn"
+                  data-auth-target="register"
+                  data-i18n="auth.ctaSign"
+                >
+                  Sign in
+                </button>
+              </div>
+            </div>
+
+            <div class="auth-visual-stage">
+              <div class="auth-float-card auth-float-card--score">
+                <strong>10+</strong>
+                <span data-i18n="auth.floatScore">高热类目持续跟踪</span>
+              </div>
+              <div class="auth-float-card auth-float-card--signal">
+                <span class="auth-float-kicker" data-i18n="auth.floatSignalKicker">本周聚焦</span>
+                <strong data-i18n="auth.floatSignalTitle">热词与选品建议联动</strong>
+              </div>
+              <div class="auth-preview-card">
+                <div class="auth-preview-chip" data-i18n="auth.previewChip">Merchant-ready workspace</div>
+                <div class="auth-preview-layout">
+                  <div class="auth-preview-panel">
+                    <span class="auth-preview-label" data-i18n="auth.previewMetricLabel">热词热度</span>
+                    <strong class="auth-preview-value">20.6M+</strong>
+                    <div class="auth-preview-tags">
+                      <span data-i18n="auth.previewTagOne">趋势判断</span>
+                      <span data-i18n="auth.previewTagTwo">类目筛选</span>
+                      <span data-i18n="auth.previewTagThree">选品建议</span>
+                    </div>
+                  </div>
+                  <div class="auth-preview-curve" aria-hidden="true">
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="auth-float-card auth-float-card--side">
+                <span class="auth-float-kicker" data-i18n="auth.floatActionKicker">进入后可查看</span>
+                <strong data-i18n="auth.floatActionTitle">热词榜单、趋势图与建议详情</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="auth-stage hidden" id="auth-stage-register">
+        <div class="auth-card auth-form-card">
+          <button type="button" class="auth-back-link" id="btn-back-home-from-register">
+            <span aria-hidden="true">←</span>
+            <span data-i18n="auth.back">返回</span>
+          </button>
+          <span class="section-chip">REGISTER</span>
+          <h1 class="auth-title" data-i18n="auth.registerTitle">注册新账号</h1>
+          <p class="auth-copy" data-i18n="auth.registerCopy">请输入电邮地址、用户名和密码。填入内容后即可进入系统。</p>
+          <form class="auth-form" id="register-form" novalidate>
+            <label class="auth-field">
+              <span data-i18n="auth.email">电邮地址</span>
+              <input type="email" id="register-email" autocomplete="email" />
+            </label>
+            <label class="auth-field">
+              <span data-i18n="auth.username">用户名</span>
+              <input type="text" id="register-username" autocomplete="username" />
+            </label>
+            <label class="auth-field">
+              <span data-i18n="auth.password">密码</span>
+              <input type="password" id="register-password" autocomplete="new-password" />
+            </label>
+            <button type="submit" class="btn-lime auth-submit-btn" data-i18n="auth.registerSubmit">注册并进入</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="auth-stage hidden" id="auth-stage-login">
+        <div class="auth-card auth-form-card">
+          <button type="button" class="auth-back-link" id="btn-back-home-from-login">
+            <span aria-hidden="true">←</span>
+            <span data-i18n="auth.back">返回</span>
+          </button>
+          <span class="section-chip">LOGIN</span>
+          <h1 class="auth-title" data-i18n="auth.loginTitle">登入已有帐号</h1>
+          <p class="auth-copy" data-i18n="auth.loginCopy">请输入用户名和密码。填入内容后即可进入系统。</p>
+          <form class="auth-form" id="login-form" novalidate>
+            <label class="auth-field">
+              <span data-i18n="auth.username">用户名</span>
+              <input type="text" id="login-username" autocomplete="username" />
+            </label>
+            <label class="auth-field">
+              <span data-i18n="auth.password">密码</span>
+              <input type="password" id="login-password" autocomplete="current-password" />
+            </label>
+            <button type="submit" class="btn-lime auth-submit-btn" data-i18n="auth.loginSubmit">登录并进入</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <div class="app-shell hidden" id="app-shell">
+      <aside class="sidebar" aria-label="主导航" data-i18n-aria-label="sidebar.aria">
+        <div class="brand">
+          <div class="brand-mark">T</div>
+          <div>
+            <div class="brand-title">Trend-to-Commerce</div>
+            <div class="brand-sub" data-i18n="brand.sub">行业热度 · 选品洞察</div>
+          </div>
+        </div>
+        <div>
+          <div class="nav-label" data-i18n="nav.label">目录</div>
+          <nav class="nav-list" aria-label="页面" data-i18n-aria-label="nav.aria">
+            <button type="button" class="nav-item active" data-route="hot">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 6h16M4 12h10M4 18h16" />
+              </svg>
+              <span data-i18n="nav.hot">本周热词榜单</span>
+            </button>
+            <button type="button" class="nav-item" data-route="selection">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="4" width="7" height="7" rx="1.5" />
+                <rect x="14" y="4" width="7" height="7" rx="1.5" />
+                <rect x="14" y="13" width="7" height="7" rx="1.5" />
+                <rect x="3" y="13" width="7" height="7" rx="1.5" />
+              </svg>
+              <span data-i18n="nav.selection">选品建议</span>
+            </button>
+            <button type="button" class="nav-item nav-item-question" data-route="question">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 5h16v11H7l-3 3V5Z" />
+                <path d="M8 9h8M8 12h5" />
+              </svg>
+              <span data-i18n="nav.question">Question</span>
+            </button>
+          </nav>
+        </div>
+        <div class="sidebar-footer">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <strong data-i18n="sidebar.account">运营账户</strong>
+            <span data-i18n="sidebar.workspace">Pro 工作区</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="main-shell">
+        <header class="main-header">
+          <div class="page-heading-group">
+            <h1 class="page-title" id="page-heading">热词洞察</h1>
+            <p class="page-subtitle" id="page-subtitle" hidden></p>
+            <p class="page-meta" id="page-date"></p>
+          </div>
+          <div class="header-actions">
+            <div class="lang-switch" id="lang-switch">
+              <button
+                type="button"
+                class="lang-trigger"
+                id="lang-trigger"
+                aria-label="切换语言"
+                data-i18n-aria-label="lang.triggerAria"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="lang-trigger-text">中 / EN</span>
+              </button>
+              <div class="lang-menu" id="lang-menu" hidden>
+                <button type="button" class="lang-option" data-lang="en">English</button>
+                <button type="button" class="lang-option" data-lang="zh">中文</button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section id="page-hot" class="page-panel">
+          <div class="page-stack">
+            <div class="hot-top-layout">
+              <div class="summary-row" aria-label="榜单概览" data-i18n-aria-label="summary.aria">
+                <div class="summary-item">
+                  <div class="summary-item-head">
+                    <div class="metric-label summary-item-label" data-i18n="summary.top">TOP 热词</div>
+                    <span class="summary-item-dot summary-item-dot-lime" aria-hidden="true"></span>
+                  </div>
+                  <div class="metric-value" id="sum-top">—</div>
+                  <div class="metric-sub summary-item-sub" data-i18n="summary.topSub">榜单第 1 位</div>
+                </div>
+                <div class="summary-item">
+                  <div class="summary-item-head">
+                    <div class="metric-label summary-item-label" data-i18n="summary.tracked">监测词条</div>
+                    <span class="summary-item-dot summary-item-dot-orange" aria-hidden="true"></span>
+                  </div>
+                  <div class="metric-value" id="sum-count">—</div>
+                  <div class="metric-sub summary-item-sub" data-i18n="summary.trackedSub">本期样本量</div>
+                </div>
+                <div class="summary-item">
+                  <div class="summary-item-head">
+                    <div class="metric-label summary-item-label" data-i18n="summary.surge">热度飙升</div>
+                    <span class="summary-item-dot summary-item-dot-teal" aria-hidden="true"></span>
+                  </div>
+                  <div class="metric-value" id="sum-surge">—</div>
+                  <div class="metric-sub summary-item-sub" data-i18n="summary.surgeSub">标注「搜索飙升」</div>
+                </div>
+              </div>
+
+              <div class="card card-pad hot-filter-card">
+                <div class="hot-filter-head">
+                  <div class="metric-label" data-i18n="filters.title">内容分类</div>
+                </div>
+                <div class="category-filter-bar" id="category-filter-bar"></div>
+              </div>
+            </div>
+
+            <div class="hot-layout">
+              <div class="card hot-table-card">
+                <div class="card-head card-pad" style="margin-bottom: 0; border-bottom: 1px solid var(--line)">
+                  <div>
+                    <h2 data-i18n="hot.title">热词榜单</h2>
+                    <p id="hot-period" data-i18n="hot.loading">数据加载中…</p>
+                  </div>
+                  <div class="table-actions">
+                    <label class="period-picker" for="period-select">
+                      <span class="period-picker-label" data-i18n="hot.periodLabel">SELECT TIME PERIOD</span>
+                      <select
+                        id="period-select"
+                        class="js-period-select"
+                        aria-label="切换榜单日期"
+                        data-i18n-aria-label="hot.periodSelectAria"
+                      ></select>
+                    </label>
+                    <button type="button" class="btn-lime" id="btn-hot-export" data-i18n="hot.export">导出榜单</button>
+                  </div>
+                </div>
+                <div
+                  class="table-wrap hot-table-shell"
+                  id="hot-table-shell"
+                  style="border: none; border-radius: 0 0 var(--radius-xl) var(--radius-xl)"
+                >
+                  <table class="data-table" id="hot-table" aria-label="本周热词榜单" data-i18n-aria-label="hot.tableAria">
+                    <colgroup>
+                      <col style="width: 12%" />
+                      <col style="width: 24%" />
+                      <col style="width: 12%" />
+                      <col style="width: 23%" />
+                      <col style="width: 29%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th data-i18n="hot.rank">排名</th>
+                        <th data-i18n="hot.topic">热词</th>
+                        <th data-i18n="hot.category">类别</th>
+                        <th data-i18n="hot.index">搜索指数</th>
+                        <th data-i18n="hot.trend">热度趋势</th>
+                      </tr>
+                    </thead>
+                    <tbody id="hot-table-body"></tbody>
+                  </table>
+                  <div class="hot-expand-panel" id="hot-expand-panel" hidden>
+                    <button
+                      type="button"
+                      class="btn-hot-expand"
+                      id="btn-hot-expand"
+                      aria-expanded="false"
+                      aria-controls="hot-table-body"
+                    >
+                      <span id="hot-expand-text"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="page-selection" class="hidden page-panel">
+          <div class="page-stack">
+            <div class="selection-intro">
+              <div class="selection-intro-note">
+                <span data-i18n="selection.noteText"
+                  >这些值得留意的话题由系统根据历史热词数据筛选。点击卡片可查看话题深度分析与选品建议。</span>
+              </div>
+              <div class="table-actions selection-period-actions">
+                <label class="period-picker" for="selection-period-select">
+                  <span class="period-picker-label" data-i18n="selection.periodLabel">SELECT TIME PERIOD</span>
+                  <select
+                    id="selection-period-select"
+                    class="js-period-select"
+                    aria-label="切换选品建议日期"
+                    data-i18n-aria-label="selection.periodSelectAria"
+                  ></select>
+                </label>
+                <p class="selection-period-note" id="selection-period-note"></p>
+              </div>
+            </div>
+            <div class="selection-grid" id="selection-grid"></div>
+          </div>
+        </section>
+
+        <section id="page-question" class="hidden page-panel">
+          <div class="page-stack">
+            <div class="card card-pad question-intro">
+              <div class="selection-intro-note question-intro-note question-intro-guide">
+                <strong data-i18n="question.guideTitle">How to ask better</strong>
+                <div class="question-guide-list">
+                  <span class="question-guide-item" data-i18n="question.guideScope">Ask about a specific topic, product direction, audience, or usage scenario.</span>
+                  <span class="question-guide-item" data-i18n="question.guideExample">Example: “What products fit perler beads for beginners?” or “What should a phone case seller launch this spring?”</span>
+                  <span class="question-guide-item" data-i18n="question.guideModes">Quick summary = fast judgment, Product ideas = actionable directions, Detailed analysis = fuller reasoning and risks.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="question-layout">
+              <section class="card card-pad question-form-panel">
+                <div class="question-panel-head">
+                  <div>
+                    <h3 data-i18n="question.studioTitle">Compose your request</h3>
+                  </div>
+                  <div class="question-panel-dot" aria-hidden="true"></div>
+                </div>
+
+                <div class="question-field">
+                  <textarea
+                    id="question-input"
+                    class="question-textarea"
+                    data-i18n-placeholder="question.inputPlaceholder"
+                    placeholder="例如：帮我分析拼豆适合卖什么产品"
+                  ></textarea>
+                </div>
+
+                <div class="question-inline-grid">
+                  <div class="question-field">
+                    <label for="question-mode-select" data-i18n="question.modeLabel">Mode</label>
+                    <select id="question-mode-select" class="question-input">
+                      <option value="product_ideas" data-i18n="question.modeProductIdeas">product ideas</option>
+                      <option value="quick_summary" data-i18n="question.modeQuickSummary">quick summary</option>
+                      <option value="detailed" data-i18n="question.modeDetailed">detailed</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="question-actions">
+                  <button type="button" class="btn-lime" id="btn-question-submit" data-i18n="question.submit">
+                    提交问题
+                  </button>
+                </div>
+              </section>
+
+              <section class="card card-pad question-result-panel">
+                <div class="question-panel-head">
+                  <div>
+                    <h3 data-i18n="question.responseTitle">AI recommendation output</h3>
+                  </div>
+                  <div class="question-panel-dot question-panel-dot--soft" aria-hidden="true"></div>
+                </div>
+
+                <div class="question-result-empty" id="question-result-empty" data-i18n="question.empty">
+                  提交问题后，这里会显示轮询到的结果。
+                </div>
+
+                <div class="question-result hidden" id="question-result">
+                  <div class="question-result-card question-result-card--summary" id="question-card-summary">
+                    <div class="detail-kicker" data-i18n="question.summaryLabel">Summary</div>
+                    <p id="question-result-summary"></p>
+                  </div>
+
+                  <div class="question-result-card question-result-card--answer" id="question-card-answer">
+                    <div class="detail-kicker" data-i18n="question.answerLabel">Answer</div>
+                    <p id="question-result-answer"></p>
+                  </div>
+
+                  <div class="question-result-card question-result-card--ideas" id="question-card-ideas">
+                    <div class="detail-kicker" data-i18n="question.ideasLabel">Product Ideas</div>
+                    <div class="question-ideas" id="question-result-ideas"></div>
+                  </div>
+
+                  <div class="question-result-card question-result-card--risks" id="question-card-risks">
+                    <div class="detail-kicker" data-i18n="question.risksLabel">Risks</div>
+                    <div class="question-risk-tags" id="question-result-risks"></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section id="page-selection-detail" class="hidden page-panel">
+          <div class="page-stack detail-page-stack">
+            <button type="button" class="detail-back-btn" id="btn-back-selection">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+              <span data-i18n="detail.back">返回选品建议</span>
+            </button>
+            <div class="card detail-page-card">
+              <div class="detail-page-layout">
+                <aside class="detail-side">
+                  <div class="detail-metric-card">
+                    <div class="detail-kicker" data-i18n="detail.searchIndexLabel">搜索指数</div>
+                    <div class="detail-metric-visual">
+                      <div class="detail-metric-ring" aria-hidden="true"></div>
+                      <div class="detail-metric-value" id="detail-search-index">20.6M+</div>
+                    </div>
+                  </div>
+
+                  <div class="detail-side-card" id="detail-info-panel">
+                    <div class="detail-side-list">
+                      <div class="detail-side-item">
+                        <span class="detail-side-label" data-i18n="detail.categoryLabel">类别</span>
+                        <strong id="detail-category"></strong>
+                      </div>
+                      <div class="detail-side-item">
+                        <span class="detail-side-label" data-i18n="detail.heatLabel">热度</span>
+                        <strong id="detail-forecast"></strong>
+                      </div>
+                      <div class="detail-side-item">
+                        <span class="detail-side-label" data-i18n="detail.relatedLabel">关联词</span>
+                        <div class="detail-related-tags" id="detail-related-tags"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="detail-side-card" id="detail-stats-panel">
+                    <div class="detail-kicker" data-i18n="detail.snapshotTitle">关键指标</div>
+                    <div class="mini-stat-row detail-side-stats" id="detail-stats"></div>
+                  </div>
+                </aside>
+
+                <div class="detail-main">
+                  <div class="detail-hero">
+                    <div class="detail-hero-meta">
+                      <span class="category-badge" id="detail-category-badge"></span>
+                    </div>
+                    <h2 id="detail-title">主题</h2>
+                    <p class="detail-desc" id="detail-desc"></p>
+                    <blockquote class="quote-box" id="detail-quote"></blockquote>
+                  </div>
+                  <div class="detail-body">
+                    <div class="detail-section detail-panel detail-panel--products" id="detail-products-panel">
+                      <div class="section-title" data-i18n="detail.productsSection">📦 MAPPED PRODUCTS & SOURCING</div>
+                      <div class="product-grid" id="detail-products"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="detail-panel detail-panel--strategy detail-bottom-strategy">
+                <div class="section-title" data-i18n="detail.strategySection">💡 AI EXECUTION STRATEGY</div>
+                <div class="strategy-bar">
+                  <span id="detail-strategy"></span>
+                  <span class="sparkle" aria-hidden="true">✦</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="overlay" id="overlay-trend" role="dialog" aria-modal="true" aria-labelledby="trend-modal-title">
+      <div class="modal sm">
+        <button
+          type="button"
+          class="modal-close"
+          id="btn-close-trend"
+          aria-label="关闭"
+          data-i18n-aria-label="modal.close"
+        >
+          ×
+        </button>
+        <div class="modal-chart-pad">
+          <h2 id="trend-modal-title">热度趋势</h2>
+          <p class="sub" id="trend-modal-range"></p>
+          <div class="chart-box">
+            <canvas id="trend-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="vendor/chart.umd.min.js"></script>
+    <script src="js/data-embedded.js"></script>
+    <script src="js/selection-detail-data.js"></script>
+    <script src="js/dynamic-translations.js"></script>
+    <script src="js/app.js"></script>
+    <style>
+      @media (max-width: 900px) {
+        .summary-row {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+  </body>
+</html>

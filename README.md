@@ -2,11 +2,9 @@
 
 Trend-to-Commerce is a course practice project that turns weekly hot keyword data, post/comment text, and merchandising records into a production-style trend insight website. It provides heat leaderboards, topic exploration, merchandising suggestions, and AI-powered Q&A. Built with a FastAPI backend, a browser-based dashboard, SQLite job storage, Docker deployment, and remote LLM calls, it helps merchants quickly identify rising demand and generate actionable product ideas.
 
-## Important: Private API Key Included
+## Remote Model Configuration
 
-This release package includes a configured `.env` file for remote model calls. Keep this folder and zip file private because `.env` contains a real API key.
-
-If you need to replace the key, edit `.env`:
+To use AI-powered Q&A, configure an OpenAI-compatible remote model in `.env`. You can replace the API key with your own:
 
 ```env
 GENERATION_API_URL=https://your-provider.example/v1/chat/completions
